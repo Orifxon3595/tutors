@@ -11,5 +11,5 @@ module.exports = {
       },
     },
   },  
-  plugins: [require('daisyui'),], // 3
+  plugins: [require('daisyui'),],
 };

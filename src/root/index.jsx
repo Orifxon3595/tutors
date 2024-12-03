@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import sidebar from "../utils/sidebar";
 import Sidebar from "../components/Sidebar";
+import Login from "../pages/Login"
 
 const Root = () => {
   return (
@@ -32,7 +33,7 @@ const Root = () => {
           })}
         </Route>
 
-        {sidebar.map((parent) => {
+        {/* {sidebar.map((parent) => {
           const ElementParent = parent.element;
           return (
             parent.hidden && (
@@ -43,9 +44,10 @@ const Root = () => {
               />
             )
           );
-        })}
+        })} */}
 
-        <Route path="/" element={<Navigate to={"/analitika"} />} />
+        <Route path="/" element={<Navigate to={"/login"} />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<h1>404 not found</h1>} />
       </Routes>
   );
