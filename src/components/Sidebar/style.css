@@ -1,0 +1,27 @@
+.overflow-cotom {
+    overflow: auto; /* Scroll qo'shish */
+    padding: 10px; /* Yengil ichki bo'shliq */
+    background-color: #f9f9f9; /* Orqa fon rangi */
+}
+
+/* Scroll barning o'zi */
+.overflow-cotom::-webkit-scrollbar {
+    width: 3px; /* Scroll barning kengligi */
+}
+
+/* Scroll barning orqa fonini gray (kulrang) qilish */
+.overflow-cotom::-webkit-scrollbar-track {
+    background: gray; /* Kulrang fon */
+    border-radius: 10px;
+}
+
+/* Scroll barning indikatori qora rangda bo'lishi */
+.overflow-cotom::-webkit-scrollbar-thumb {
+    background: black; /* Qora indikator */
+    border-radius: 10px; /* Yumshoq burchaklar */
+}
+
+/* Hover holatida indikatorni o'zgartirish */
+.overflow-cotom::-webkit-scrollbar-thumb:hover {
+    background: red; /* Hover qilinganda qoradan biroz ochiqroq rangga o'tadi */
+}
