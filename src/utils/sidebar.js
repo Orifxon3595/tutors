@@ -1,12 +1,14 @@
 // icons
 import { FaUserGraduate } from "react-icons/fa6";
-import { AiOutlinePieChart, AiOutlineTeam } from "react-icons/ai";
+import { AiOutlineBarChart, AiOutlinePieChart, AiOutlineTeam } from "react-icons/ai";
 import { GrUserPolice } from "react-icons/gr";
 // Components
 import Analitika from "../pages/Analitika";
 import Fakultet from "../pages/Fakultet";
 import Admins from "../pages/Admins";
 import Tutors from "../pages/Tutors";
+import Baholash from "../pages/Baholash";
+
 const sidebar = [
   {
     id: 1,
@@ -43,6 +45,15 @@ const sidebar = [
     isPrivate: true,
     element: Tutors,
     role: ["superAdmin, admin"],
+  },
+  {
+    id: 5,
+    title: "Baholash",
+    path: "/Baholash",
+    icon: AiOutlineBarChart,
+    isPrivate: true,
+    element: Baholash,
+    role: ["superAdmin"],
   },
 ]
 
