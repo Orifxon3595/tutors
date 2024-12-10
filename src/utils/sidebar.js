@@ -23,7 +23,7 @@ const sidebar = [
         icon: AiOutlinePieChart,
         isPrivate: true,
         element: Analitika,
-        role: ["superAdmin"],
+        role: ["superAdmin, admin"],
     },
     {
         id: 2,

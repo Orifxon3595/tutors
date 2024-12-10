@@ -73,7 +73,7 @@ const Breadcrumb = () => {
             {/* Togler Menu */}
             <div
                 ref={menuRef}
-                className={`w-[220px] absolute top-[46px] right-0 z-30 p-2 rounded-md shadow-lg border border-gray-300 ${
+                className={`w-[220px] absolute top-[46px] right-0 z-30 p-2 rounded-md shadow-lg border border-gray-300 bg-white ${
                     !toglerMenu && "hidden"
                 }`}
             >
@@ -114,6 +114,7 @@ const Breadcrumb = () => {
                                 file:text-sm file:font-semibold
                                 file:bg-violet-50 file:text-violet-700
                                 hover:file:bg-violet-100
+                                cursor-pointer
                                 `}
                             />
                             <div className="text-[12px] text-[red] ms-2">
