@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import Logo from "../../assets/icons/logo_kspi.png";
 import * as Yup from "yup";
@@ -8,9 +8,10 @@ import { BsEyeSlashFill, BsFillEyeFill } from "react-icons/bs";
 
 const Login = () => {
     const [eye, setEye] = useState(false);
-    const degreeData = {superAdmin: "superAdmin", admin: "admin", tutor: "tutor"}
-    const navigate = useNavigate();
+    const roleData = {superAdmin: "superAdmin", admin: "admin", tutor: "tutor"}
     const [errMessage, setErrMessage] = useState("");
+    const navigate = useNavigate();
+
     const validationSchema = Yup.object({
         username: Yup.string()
             .min(3, "Kamida 3ta belgi bo'lishi kerak!")
@@ -37,7 +38,9 @@ const Login = () => {
                 const data = JSON.stringify({
                     ...values,
                     token: "123",
-                    degree: degreeData.superAdmin
+                    role: roleData.superAdmin,
+                    name: "Azimjon",
+                    surname: "Meliboev",
                 });
                 localStorage.setItem("data", data);
                 navigate("/analitka");
@@ -67,17 +70,20 @@ const Login = () => {
         },
     });
 
-    // if localStorage.data be true
-    if (data?.remember) {
-        formik.values.username = data.username;
-        formik.values.password = data.password;
-    }
 
     const handleClickPassword = () => {
         const btn = document.getElementById("password");
         btn.type = btn.type === "text" ? "password" : "text";
         btn.type === "text" ? setEye(true) : setEye(false);
     };
+
+    useEffect(() => {
+        if (data) {
+            if (data.remember) {
+                navigate('/analitka')
+            }
+        }
+    }, [data, navigate])
 
     return (
         <div className="w-full h-[100vh] flex justify-center items-center ">

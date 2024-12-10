@@ -6,7 +6,7 @@ import { ReactComponent as exit } from "../../assets/icons/exit.svg";
 const Arrow = styled(arrow)`
     display: flex;
     margin-left: auto;
-    transform: ${({ active }) => active === "true" && `rotate(90deg)`};
+    transform: ${({ $active }) => $active === "true" && `rotate(90deg)`};
     transition: all 0.1s;
 `;
 
@@ -25,10 +25,10 @@ const MenuItem = styled(NavLink)`
     padding-right: 24px;
     text-decoration: none;
 
-    background-color: ${({ active }) =>
-        active === "true" && `rgba(200, 200, 200, 1)`};
-    color: ${({ active }) =>
-        active === "true" ? `var(--activeColor)` : `var(--primaryColor)`};
+    background-color: ${({ $active }) =>
+        $active === "true" && `rgba(200, 200, 200, 1)`};
+    color: ${({ $active }) =>
+        $active === "true" ? `var(--activeColor)` : `var(--primaryColor)`};
 `;
 
 MenuItem.Title = styled.div`
@@ -47,7 +47,7 @@ MenuItem.Title = styled.div`
         }
     }
     & path {
-        fill: ${({ active }) => active === "true" && " var(--activeColor)"};
+        fill: ${({ $active }) => $active === "true" && " var(--activeColor)"};
     }
     .icon {
         margin-right: 16px;
@@ -56,7 +56,7 @@ MenuItem.Title = styled.div`
 
 const ChildWrapper = styled.div`
     margin-left: 35px;
-    height: ${({ active }) => (active === "true" ? "auto" : "0px")};
+    height: ${({ $active }) => ($active === "true" ? "auto" : "0px")};
     overflow: hidden;
 `;
 

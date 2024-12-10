@@ -1,215 +1,48 @@
 // icons
-import { FaChartBar } from "react-icons/fa6";
+import { FaUserGraduate } from "react-icons/fa6";
+import { AiOutlinePieChart, AiOutlineTeam } from "react-icons/ai";
+import { GrUserPolice } from "react-icons/gr";
 // Components
-import AnalitikaView from "../pages/AnalitikaPage";
-
-// const sidebar = [
-//   {
-//     id: 1,
-//     title: "Analitika",
-//     path: "/analitka",
-//     icon: FaChartBar,
-//     isPrivate: true,
-//     element: AnalitikaView,
-//     role: ["admin", "manager"],
-//   },
-//   {
-//     id: 2,
-//     title: "Lidlar", // buyurtma
-//     path: "/lidlar",
-//     isPrivate: true,
-//     icon: FaChartBar,
-//     element: AnalitikaView,
-//     role: ["admin"],
-//     children: [
-//       {
-//         id: `2-1`,
-//         parentID: 2,
-//         title: "Barcha Lidlar",
-//         path: "/lidlar/all-lids",
-//         isPrivate: true,
-//         element: AnalitikaView,
-//         role: ["admin", "manager"],
-//       },
-//     ],
-//   },
-// ];
+import Analitika from "../pages/Analitika";
+import Fakultet from "../pages/Fakultet";
+import Admins from "../pages/Admins";
+import Tutors from "../pages/Tutors";
 const sidebar = [
   {
     id: 1,
     title: "Analitka",
     path: "/analitka",
-    icon: FaChartBar,
+    icon: AiOutlinePieChart,
     isPrivate: true,
-    element: AnalitikaView,
-    role: ["admin"],
+    element: Analitika,
+    role: ["superAdmin"],
   },
   {
     id: 2,
-    title: "Home",
-    path: "/home",
-    icon: FaChartBar,
+    title: "Fakultetlar",
+    path: "/fakultet",
+    icon: AiOutlineTeam,
     isPrivate: true,
-    element: AnalitikaView,
-    role: ["admin"],
-    children: [
-      {
-        id: `2-1`,
-        title: "Ochiq ma'lumotlar",
-        path: "/home/ochiq-malumotlar",
-        isPrivate: true,
-        element: AnalitikaView,
-        role: ["admin"],
-      },
-      {
-        id: `2-2`,
-        title: "Ochiq ma'lumotlar",
-        path: "/home/ochiq-malumotlar",
-        isPrivate: true,
-        element: AnalitikaView,
-        role: ["admin"],
-      },
-      {
-        id: `2-3`,
-        title: "Ochiq ma'lumotlar",
-        path: "/home/ochiq-malumotlar",
-        isPrivate: true,
-        element: AnalitikaView,
-        role: ["admin"],
-      },
-      {
-        id: `2-1`,
-        title: "Ochiq ma'lumotlar",
-        path: "/home/ochiq-malumotlar",
-        isPrivate: true,
-        element: AnalitikaView,
-        role: ["admin"],
-      },
-      {
-        id: `2-2`,
-        title: "Ochiq ma'lumotlar",
-        path: "/home/ochiq-malumotlar",
-        isPrivate: true,
-        element: AnalitikaView,
-        role: ["admin"],
-      },
-      {
-        id: `2-3`,
-        title: "Ochiq ma'lumotlar",
-        path: "/home/ochiq-malumotlar",
-        isPrivate: true,
-        element: AnalitikaView,
-        role: ["admin"],
-      },
-    ]
+    element: Fakultet,
+    role: ["superAdmin"],
   },
   {
     id: 3,
-    title: "Hello",
-    path: "/hello",
-    icon: FaChartBar,
+    title: "Adminlar",
+    path: "/admin",
+    icon: GrUserPolice,
     isPrivate: true,
-    element: AnalitikaView,
-    role: ["admin"],
+    element: Admins,
+    role: ["superAdmin"],
   },
   {
     id: 4,
-    title: "Home",
-    path: "/home",
-    icon: FaChartBar,
+    title: "Tyutorlar",
+    path: "/tyutor",
+    icon: FaUserGraduate,
     isPrivate: true,
-    element: AnalitikaView,
-    role: ["admin"],
-    children: [
-      {
-        id: `4-1`,
-        title: "Ochiq ma'lumotlar",
-        path: "/home/ochiq-malumotlar",
-        isPrivate: true,
-        element: AnalitikaView,
-        role: ["admin"],
-      },
-      {
-        id: `4-2`,
-        title: "Ochiq ma'lumotlar",
-        path: "/home/ochiq-malumotlar",
-        isPrivate: true,
-        element: AnalitikaView,
-        role: ["admin"],
-      },
-      {
-        id: `4-3`,
-        title: "Ochiq ma'lumotlar",
-        path: "/home/ochiq-malumotlar",
-        isPrivate: true,
-        element: AnalitikaView,
-        role: ["admin"],
-      },
-      {
-        id: `4-4`,
-        title: "Ochiq ma'lumotlar",
-        path: "/home/ochiq-malumotlar",
-        isPrivate: true,
-        element: AnalitikaView,
-        role: ["admin"],
-      },
-      {
-        id: `4-5`,
-        title: "Ochiq ma'lumotlar",
-        path: "/home/ochiq-malumotlar",
-        isPrivate: true,
-        element: AnalitikaView,
-        role: ["admin"],
-      },
-      {
-        id: `2-1`,
-        title: "Ochiq ma'lumotlar",
-        path: "/home/ochiq-malumotlar",
-        isPrivate: true,
-        element: AnalitikaView,
-        role: ["admin"],
-      },
-      {
-        id: `2-2`,
-        title: "Ochiq ma'lumotlar",
-        path: "/home/ochiq-malumotlar",
-        isPrivate: true,
-        element: AnalitikaView,
-        role: ["admin"],
-      },
-      {
-        id: `2-3`,
-        title: "Ochiq ma'lumotlar",
-        path: "/home/ochiq-malumotlar",
-        isPrivate: true,
-        element: AnalitikaView,
-        role: ["admin"],
-      },
-      {
-        id: `2-1`,
-        title: "Ochiq ma'lumotlar",
-        path: "/home/ochiq-malumotlar",
-        isPrivate: true,
-        element: AnalitikaView,
-        role: ["admin"],
-      },
-      {
-        id: `2-2`,
-        title: "Ochiq ma'lumotlar",
-        path: "/home/ochiq-malumotlar",
-        isPrivate: true,
-        element: AnalitikaView,
-        role: ["admin"],
-      },
-      {
-        id: `2-3`,
-        title: "Ochiq ma'lumotlar",
-        path: "/home/ochiq-malumotlar",
-        isPrivate: true,
-        element: AnalitikaView,
-        role: ["admin"],
-      },
-    ]
+    element: Tutors,
+    role: ["superAdmin, admin"],
   },
 ]
 

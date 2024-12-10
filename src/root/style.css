@@ -1,0 +1,6 @@
+.overflow-costom {
+    overflow: auto!important; /* Scroll qo'shish */
+    padding: 10px; /* Yengil ichki bo'shliq */
+    scrollbar-width: thin;
+    scrollbar-color: rgb(78, 78, 78) rgb(172, 172, 172); /* Rang sozlamalari */
+}

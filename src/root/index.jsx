@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import sidebar from "../utils/sidebar";
 import Sidebar from "../components/Sidebar";
 import Login from "../pages/Login"
+import "./style.css"
 
 const Root = () => {
   return (
