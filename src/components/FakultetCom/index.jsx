@@ -18,10 +18,17 @@ const FakultetCom = () => {
     // }
   };
 
+  const validationSchema = Yup.object({
+    fakultet_name: Yup.string()
+      .max(50, "Maksimal uzunlik 50 ta belgi bo'lishi kerak")
+      .required("Fakultitet nomi maydoni majburiy"),
+  });
+
   const formik = useFormik({
     initialValues: {
       fakultet_name: "",
     }, // Initial values for formik
+    validationSchema,
     onSubmit: async (values, onSubmitProps) => {
       const data = new FormData();
       for (let key in values) {
@@ -68,12 +75,6 @@ const FakultetCom = () => {
     //   console.error("Xatolik yuz berdi!", error);
     // }
   };
-
-  const validationSchema = Yup.object({
-    fakultet_name: Yup.string()
-      .max(50, "Maksimal uzunlik 50 ta belgi bo'lishi kerak")
-      .required("Fakultitet nomi maydoni majburiy"),
-  });
 
   useEffect(() => {
     fechtData();
