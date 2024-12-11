@@ -4,10 +4,13 @@ import { Formik, useFormik } from "formik";
 import * as Yup from "yup";
 import MyTextInput from "../MyTextInput";
 
+import { RiPencilFill } from "react-icons/ri";
+import { MdDeleteForever } from "react-icons/md";
+
 const FakultetCom = () => {
   const [edit, setEdit] = useState(false);
   const [id, setId] = useState(null);
-  const [datas, setDatas] = useState([]);
+  const [datas, setDatas] = useState([{}]);
 
   const fechtData = async () => {
     // try {
@@ -88,7 +91,7 @@ const FakultetCom = () => {
       <div className="grid grid-cols-3">
         <div className="col-span-1 border p-5">
           <Formik>
-            <form>
+            <form onSubmit={formik.handleChange}>
               <fieldset className="border px-5 pb-5 mb-5">
                 <legend className="text-red-500 font-medium">
                   Kakultitet qo'shish
@@ -96,15 +99,15 @@ const FakultetCom = () => {
                 <div className="my-5">
                   <MyTextInput
                     type="text"
-                    id="title_uz"
-                    name="title_uz"
+                    id="fakultet_name"
+                    name="fakultet_name"
                     label="Fakultitet"
                     tab="nomi"
-                    value={formik.values.title_uz}
+                    value={formik.values.fakultet_name}
                     onChange={formik.handleChange}
                   />
-                  {formik.touched.title_uz && formik.errors.title_uz ? (
-                    <div className="text-red-500">{formik.errors.title_uz}</div>
+                  {formik.touched.fakultet_name && formik.errors.fakultet_name ? (
+                    <div className="text-red-500">{formik.errors.fakultet_name}</div>
                   ) : null}
                 </div>
                 <button type="submit" className="btn btn-success w-full">
@@ -119,31 +122,21 @@ const FakultetCom = () => {
             datas.map((data) => {
               return (
                 <div key={data.id}>
-                  <h3 className="text-xl font-bold font-source text-center text-[#004269]">
-                    {data.title_uz}
-                  </h3>
-                  <p className="text-sm text-center">{data.body_uz}</p>
-                  <div>
-                    <img
-                      src={data.rasm}
-                      alt=""
-                      className="w-full lg:max-h-40 xl:h-[460px] shadow-2xl opacity-75 mt-5"
-                    />
-                  </div>
-                  <div className="flex justify-between py-5">
+                  <p>KKKKKKKKKK</p>
+                  <div className="flex py-5">
                     <button
                       type="submit"
-                      className="px-3 py-0.5 text-xs rounded-lg border border-teal-500 bg-teal-500 active:bg-white active:text-teal-500 text-gray-800 font-semibold"
+                      className="px-1 text-xl rounded-lg border text-teal-500 border-teal-500 bg-white active:bg-teal-500 active:text-white font-semibold ml-2"
                       onClick={() => handleEdit(data.id)}
                     >
-                      Taxrirlash
+                      <RiPencilFill/>
                     </button>
                     <button
                       type="submit"
-                      className="px-3 py-0.5 text-xs rounded-lg border border-red-500 bg-red-500 active:bg-white active:text-red-500 text-gray-800 font-semibold ml-2"
+                      className="px-1 text-xl rounded-lg border text-red-500 border-red-500 bg-white active:bg-red-500 active:text-white font-semibold ml-2"
                       onClick={() => handleDelete(data.id)}
                     >
-                      O'chirish
+                      <MdDeleteForever/>
                     </button>
                   </div>
                 </div>
