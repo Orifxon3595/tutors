@@ -1,11 +1,37 @@
 import React from "react";
 import StatistikBox from "../../components/StatistikBox";
 import AdminImg from "../../assets/icons/icons8-police-100.png";
-import Bachalor from "../../assets/icons/icons8-bachelor-64.png"
-import Team from "../../assets/icons/icons8-users-100.png"
+import Bachalor from "../../assets/icons/icons8-bachelor-64.png";
+import Team from "../../assets/icons/icons8-users-100.png";
 
 const Analitika = () => {
-    const dataStat = [
+    const dataStatTutor = [
+        {
+            id: 3,
+            name: "Top 5",
+            numbers: 18,
+            color: "#00FF0080",
+            icon: Team,
+            unit: "%",
+        },
+        {
+            id: 4,
+            name: "O'rta",
+            numbers: 68,
+            color: "#ffad3180",
+            icon: Team,
+            unit: "%",
+        },
+        {
+            id: 5,
+            name: "Quyi 5",
+            numbers: 24,
+            color: "#FF000080",
+            icon: Team,
+            unit: "%",
+        },
+    ];
+    const dataStatUser = [
         {
             id: 1,
             name: "Adminlar",
@@ -22,35 +48,18 @@ const Analitika = () => {
             icon: Bachalor,
             unit: "ta",
         },
-        {
-            id: 3,
-            name: "Top 6 talik",
-            numbers: 18,
-            color: "#00FF0080",
-            icon: Team,
-            unit: "%",
-        },
-        {
-          id: 4,
-          name: "O'rta",
-          numbers: 68,
-          color: "#ffad3180",
-          icon: Team,
-          unit: "%",
-      },
-      {
-        id: 5,
-        name: "Eng pas 6 talik",
-        numbers: 24,
-        color: "#FF000080",
-        icon: Team,
-        unit: "%",
-    },
     ];
     return (
-        <div className="p-2">
-            <div className="flex flex-wrap justify-center items-center gap-3 my-12">
-                {dataStat.map((data) => (
+        <div className="p-4">
+            <h1 className="mb-4 text-2xl font-medium">Foydalanuvchilar:</h1>
+            <div className="flex flex-wrap justify-start items-center gap-3">
+                {dataStatUser.map((data) => (
+                    <StatistikBox key={data.id} data={data} />
+                ))}
+            </div>
+            <h1 className="my-4 text-2xl font-medium">Tyutorlar:</h1>
+            <div className="flex flex-wrap justify-start items-center gap-3">
+                {dataStatTutor.map((data) => (
                     <StatistikBox key={data.id} data={data} />
                 ))}
             </div>

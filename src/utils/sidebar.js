@@ -14,7 +14,8 @@ import Admins from "../pages/Admins";
 import Tutors from "../pages/Tutors";
 import Baholash from "../pages/Baholash";
 import Topshiriqlar from "../pages/Topshiriqlar";
-
+import BaholashMezonlari from "../pages/BaholashMezonlari";
+import { VscGraph } from "react-icons/vsc";
 const sidebar = [
     {
         id: 1,
@@ -68,7 +69,16 @@ const sidebar = [
         icon: RiFileList3Line,
         isPrivate: true,
         element: Topshiriqlar,
-        role: ["superAdmin"],
+        role: ["superAdmin, admin, user"],
+    },
+    {
+        id: 6,
+        title: "BaholashMezonlari",
+        path: "/baholash-mezonlari",
+        icon: VscGraph,
+        isPrivate: true,
+        element: BaholashMezonlari,
+        role: ["superAdmin, admin, user"],
     },
 ];
 
