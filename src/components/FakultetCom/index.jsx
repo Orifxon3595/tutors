@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Formik, useFormik } from "formik";
 import * as Yup from "yup";
 import MyTextInput from "../MyTextInput";
+import "./style.css"
 
 import { RiPencilFill } from "react-icons/ri";
 import { MdDeleteForever } from "react-icons/md";
@@ -88,11 +89,11 @@ const FakultetCom = () => {
       <h1 className="text-3xl font-medium text-gray-700 text-center my-5">
         Fakultitetlar
       </h1>
-      <div className="grid grid-cols-3">
-        <div className="col-span-1 border p-5">
+      <div className="max-w-7xl px-5 mx-auto grid grid-cols-1 md:grid-cols-2 gap-2">
+        <div className="md:px-2">
           <Formik>
             <form onSubmit={formik.handleChange}>
-              <fieldset className="border px-5 pb-5 mb-5">
+              <fieldset className="shadow-lg rounded-md px-5 pb-5 border border-slate-100">
                 <legend className="text-red-500 font-medium">
                   Kakultitet qo'shish
                 </legend>
@@ -110,23 +111,23 @@ const FakultetCom = () => {
                     <div className="text-red-500">{formik.errors.fakultet_name}</div>
                   ) : null}
                 </div>
-                <button type="submit" className="btn btn-success w-full">
+                <button type="submit" className={!edit ?  "btn text-white w-full hover:bg-blue-100 hover:border-blue-500 bg-blue-500 hover:text-blue-500" : "btn text-white w-full hover:bg-teal-100 hover:border-teal-500 bg-teal-500 hover:text-teal-500"}>
                   {!edit ? "Yuborish" : "Saqlash"}
                 </button>
               </fieldset>
             </form>
           </Formik>
         </div>
-        <div className="col-span-2 border p-2">
+        <div className="p-2">
           {datas &&
             datas.map((data) => {
               return (
-                <div key={data.id}>
-                  <p>KKKKKKKKKK</p>
-                  <div className="flex py-5">
+                <div key={data.id} className="flex justify-between items-center shadow-md rounded-md px-3 py-3 md:hover:-translate-y-1 border border-slate-100">
+                  <p className="line-clamp-1">Maktabgacha va boshlang'ich ta'lim ddddd deddddd ddd dd ddddddddd</p>
+                  <div className="flex">
                     <button
                       type="submit"
-                      className="px-1 text-xl rounded-lg border text-teal-500 border-teal-500 bg-white active:bg-teal-500 active:text-white font-semibold ml-2"
+                      className="px-1 text-xl rounded-lg border text-teal-500 border-teal-500 bg-white active:bg-teal-500 active:text-white font-semibold"
                       onClick={() => handleEdit(data.id)}
                     >
                       <RiPencilFill/>
