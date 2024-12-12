@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Formik, useFormik } from "formik";
 import * as Yup from "yup";
 import MyTextInput from "../MyTextInput";
-import "./style.css"
+import "./style.css";
 
 import { RiPencilFill } from "react-icons/ri";
 import { MdDeleteForever } from "react-icons/md";
@@ -107,11 +107,21 @@ const FakultetCom = () => {
                     value={formik.values.fakultet_name}
                     onChange={formik.handleChange}
                   />
-                  {formik.touched.fakultet_name && formik.errors.fakultet_name ? (
-                    <div className="text-red-500">{formik.errors.fakultet_name}</div>
+                  {formik.touched.fakultet_name &&
+                  formik.errors.fakultet_name ? (
+                    <div className="text-red-500">
+                      {formik.errors.fakultet_name}
+                    </div>
                   ) : null}
                 </div>
-                <button type="submit" className={!edit ?  "btn text-white w-full hover:bg-blue-100 hover:border-blue-500 bg-blue-500 hover:text-blue-500" : "btn text-white w-full hover:bg-teal-100 hover:border-teal-500 bg-teal-500 hover:text-teal-500"}>
+                <button
+                  type="submit"
+                  className={
+                    !edit
+                      ? "btn text-white w-full hover:bg-blue-100 hover:border-blue-500 bg-blue-500 hover:text-blue-500"
+                      : "btn text-white w-full hover:bg-teal-100 hover:border-teal-500 bg-teal-500 hover:text-teal-500"
+                  }
+                >
                   {!edit ? "Yuborish" : "Saqlash"}
                 </button>
               </fieldset>
@@ -122,22 +132,28 @@ const FakultetCom = () => {
           {datas &&
             datas.map((data) => {
               return (
-                <div key={data.id} className="flex justify-between items-center shadow-md rounded-md px-3 py-3 md:hover:-translate-y-1 border border-slate-100">
-                  <p className="line-clamp-1">Maktabgacha va boshlang'ich ta'lim ddddd deddddd ddd dd ddddddddd</p>
+                <div
+                  key={data.id}
+                  className="flex justify-between items-center shadow-md rounded-md px-3 py-3 md:hover:-translate-y-1 border border-slate-100"
+                >
+                  <p className="line-clamp-1">
+                    Maktabgacha va boshlang'ich ta'lim ddddd deddddd ddd dd
+                    ddddddddd
+                  </p>
                   <div className="flex">
                     <button
                       type="submit"
                       className="px-1 text-xl rounded-lg border text-teal-500 border-teal-500 bg-white active:bg-teal-500 active:text-white font-semibold"
                       onClick={() => handleEdit(data.id)}
                     >
-                      <RiPencilFill/>
+                      <RiPencilFill />
                     </button>
                     <button
                       type="submit"
                       className="px-1 text-xl rounded-lg border text-red-500 border-red-500 bg-white active:bg-red-500 active:text-white font-semibold ml-2"
                       onClick={() => handleDelete(data.id)}
                     >
-                      <MdDeleteForever/>
+                      <MdDeleteForever />
                     </button>
                   </div>
                 </div>
@@ -148,5 +164,6 @@ const FakultetCom = () => {
     </div>
   );
 };
+// ttt
 
 export default FakultetCom;
