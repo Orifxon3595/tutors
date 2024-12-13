@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { Formik, useFormik } from "formik";
 import * as Yup from "yup";
 import MyTextInput from "../MyTextInput";
-import "./style.css";
 
 import { RiPencilFill } from "react-icons/ri";
 import { MdDeleteForever } from "react-icons/md";
